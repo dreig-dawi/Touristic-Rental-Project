@@ -9,8 +9,10 @@ public class Main {
         Building myBuilding = new Building("Borne suites");
         myBuilding.addApartment(myApartment);
         myBuilding.addApartment("Borne2");
-        myApartment.getAvilabilty(2025, 10, 31, 3);
+        myApartment.printAvilabilty(2025, 10, 31, 3);
         myApartment.book(2025, 10, 31, 3);
         myApartment.book(2025, 10, 31, 3);
+        Apartment myApartment1 = new Apartment("Borne3");
+        System.out.println("Test: " + myApartment1.getTerraceQuantity());
     }
 }

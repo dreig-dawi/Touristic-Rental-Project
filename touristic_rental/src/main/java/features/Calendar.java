@@ -2,9 +2,9 @@ package features;
 
 import java.util.HashMap;
 
-import features.utils.Utils;
+import features.utils.Date;
 
-public class Calendar extends Utils {
+public class Calendar {
     public HashMap<String, Boolean> calendar = new HashMap<String, Boolean>();
     
     public Calendar() {
@@ -27,7 +27,7 @@ public class Calendar extends Utils {
         for (int year = 2024; year <= 2034; year++) {
             for (int month = 1; month <= 12; month++) {
                 for (int day = 1; day <= 31; day++) {
-                    if (checkExistentDay(day, month, year)) {
+                    if (Date.checkExistentDay(day, month, year)) {
                         date = "" + year + "-" + month + "-" + day;
                         calendar.put(date, true);
                     }

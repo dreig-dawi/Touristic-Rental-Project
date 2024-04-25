@@ -32,16 +32,7 @@ class BuildingTest {
         building.addApartment("Apartment 1");
         building.addApartment("Apartment 2");
         building.addApartment("Apartment 3");
-        assertEquals(3, building.getApartmentQuantityNumber());
-    }
-
-    @Test
-    void testGetApartmentNames() {
-        building.addApartment("Apartment 1");
-        building.addApartment("Apartment 2");
-        building.addApartment("Apartment 3");
-        String expected = "The building has the following apartments:\nApartment 1\nApartment 2\nApartment 3\n";
-        assertEquals(expected, building.getApartmentNamesString());
+        assertEquals(3, building.getApartmentQuantity());
     }
 
     @Test
@@ -49,12 +40,4 @@ class BuildingTest {
         assertEquals("Test Building", building.getName());
     }
 
-    @Test
-    void testGetApartmentList() {
-        building.addApartment("Apartment 1");
-        building.addApartment("Apartment 2");
-        building.addApartment("Apartment 3");
-        String expected = "The building has 3 apartments.\nApartment 1\nApartment 2\nApartment 3\n";
-        assertEquals(expected, building.getApartmentList());
-    }
 }

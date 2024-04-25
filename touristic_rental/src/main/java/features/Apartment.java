@@ -1,49 +1,67 @@
 package features;
 
-import features.utils.Utils;
+import features.utils.Date;
 
-public class Apartment extends Utils {
+public class Apartment{
     private String name;
-    private int nGuests;
-    private int nBedrooms;
-    private int nBathrooms;
-    private int nTerraces;
+    private int guestQuantity;
+    private int bedroomQuantity;
+    private int bathroomQuantity;
+    private int terraceQuantity;
     private Calendar availability = new Calendar();
 
+    // Constructors
     public Apartment(String name) {
         this.name = name;
     }
     public Apartment(String name, int nGuests, int nBedrooms, int nBathrooms, int nTerraces) {
         this.name = name;
-        this.nGuests = nGuests;
-        this.nBedrooms = nBedrooms;
-        this.nBathrooms = nBathrooms;
-        this.nTerraces = nTerraces;
+        this.guestQuantity = nGuests;
+        this.bedroomQuantity = nBedrooms;
+        this.bathroomQuantity = nBathrooms;
+        this.terraceQuantity = nTerraces;
     }
 
+    // Getters
     public String getName() {
         return this.name;
     }
+    public int getGuestQuantity() {
+        return this.guestQuantity;
+    }
+    public int getBedroomQuantity() {
+        return this.bedroomQuantity;
+    }
+    public int getBathroomQuantity() {
+        return this.bathroomQuantity;
+    }
+    public int getTerraceQuantity() {
+        return this.terraceQuantity;
+    }
+    
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
-    public int getNGuests() {
-        return this.nGuests;
+    public void setGuestQuantity(int nGuests) {
+        this.guestQuantity = nGuests;
     }
-    public int getNBedrooms() {
-        return this.nBedrooms;
+    public void setBedroomQuantity(int nBedrooms) {
+        this.bedroomQuantity = nBedrooms;
     }
-    public int getNBarthrooms() {
-        return this.nBathrooms;
+    public void setBathroomQuantity(int nBathrooms) {
+        this.bathroomQuantity = nBathrooms;
     }
-    public int getNTerrraces() {
-        return this.nTerraces;
+    public void setTerraceQuantity(int nTerraces) {
+        this.terraceQuantity = nTerraces;
     }
-    public void getAvilabilty(int year, int month, int day, int nights) {
+    
+    // Methods
+    public void printAvilabilty(int year, int month, int day, int nights) {
         String date;
         String available;
         for (int i = 0; i < nights; i++, day++) {
-            date = dateRegulator(year, month, day);
+            date = Date.dateRegulator(year, month, day);
             if (date.equals("next_month")) {
                 month++;
                 day = 0;
@@ -64,9 +82,9 @@ public class Apartment extends Utils {
         String date;
         boolean available = true;
         int iDay = day, iMonth = month, iYear = year;
-
+        
         for (int i = 0; i < nights; i++, day++) {
-            date = dateRegulator(year, month, day);
+            date = Date.dateRegulator(year, month, day);
             if (date.equals("next_month")) {
                 month++;
                 day = 0;
@@ -90,7 +108,7 @@ public class Apartment extends Utils {
             month = iMonth;
             day = iDay;
             for (int i = 0; i < nights; i++, day++) {
-                date = dateRegulator(year, month, day);
+                date = Date.dateRegulator(year, month, day);
                 if (date.equals("next_month")) {
                     month++;
                     day = 0;

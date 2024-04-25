@@ -24,3 +24,4 @@ The functionality of project it is explained below, this explanation is based on
 #### Added:
 - Implemented Building class (#4)
 - Getting test ready (#5)
+- Implementing try-catchs (#6)

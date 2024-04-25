@@ -1,7 +1,7 @@
 package features.utils;
 
-abstract class Date {
-    public boolean checkExistentDay(int day, int month, int year)  {
+public class Date {
+    public static boolean checkExistentDay(int day, int month, int year)  {
         if (longMonth(month) && day <= 31)
         {
             return true;
@@ -18,7 +18,7 @@ abstract class Date {
         }
         return false;
     }  
-    public String dateRegulator(int year, int month, int day) {
+    public static String dateRegulator(int year, int month, int day) {
         if (!checkExistentDay(day, month, year)) {
             if (day > 31)
             {
@@ -31,10 +31,10 @@ abstract class Date {
         }
         return "" + year + "-" + month + "-" + day;
     }
-    public boolean longMonth(int month) {
+    public static boolean longMonth(int month) {
         return ((month <= 7 && month % 2 == 1) || (month >=8 && month % 2 == 0));
     }
-    public boolean shortMonth(int month) {
+    public static boolean shortMonth(int month) {
         return !longMonth(month);
     }
     public int updateCorrectDate(int year, int month, int day) {
