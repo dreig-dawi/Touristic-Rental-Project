@@ -19,13 +19,16 @@ public class Building {
     public String getName() {
         return this.name;
     }
-    static Apartment getApartment(String name) {
+    Apartment getApartment(String name) {
         for (Apartment apartment : apartmentList) {
             if (apartment.getName().equals(name)) {
                 return apartment;
             }
         }
         throw new IllegalArgumentException("Apartment not found.");
+    }
+    public List<Apartment> getApartmentList() {
+        return apartmentList;
     }
     public int getApartmentGuests(String name) {
         try {
@@ -75,6 +78,11 @@ public class Building {
         apartmentList.add(apartment);
         System.out.println("Apartment " + apartment.getName() + " added to the building.");
     }
+    public void addApartment(String name, int nGuests, int nBedrooms, int nBathrooms, int nTerraces) {
+        Apartment apartment = new Apartment(name, nGuests, nBedrooms, nBathrooms, nTerraces);
+        apartmentList.add(apartment);
+        System.out.println("Apartment " + name + " added to the building.");
+    }
     public static void printApartmentQuantity() {
         System.out.println("The building has " + apartmentList.size() + " apartments.");
     }
@@ -96,15 +104,18 @@ public class Building {
         }
         System.out.println(sb.toString());
     }
-    public static void getApartmentList() {
-        printApartmentQuantity();
-        for (Apartment apartment : apartmentList) {
-            System.out.println(apartment.getName());
-        }
-    }
     public void printApartmentAvailability(String name, int year, int month, int day, int nights) {
         Apartment apartment = getApartment(name);
         apartment.printAvilabilty(year, month, day, nights);
     }
-
+    public void removeApartment(String name) {
+        for (Apartment apartment : apartmentList) {
+            if (apartment.getName().equals(name)) {
+                apartmentList.remove(apartment);
+                System.out.println("Apartment " + name + " removed from the building.");
+                return;
+            }
+        }
+        System.out.println("Apartment not found.");
+    }
 }

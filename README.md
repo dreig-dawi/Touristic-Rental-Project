@@ -8,20 +8,24 @@ The functionality of project it is explained below, this explanation is based on
 ## Functionality
 ---
 ---
-### Release v1.1.1
+### Release v1.1.0
 #### Added: 
 - Creation of classes Calendar, Building and Apartment (#1)
 ---
-### Release v1.1.2
+### Release v1.1.1
 #### Added:
 - Working on calendar (#2)
 ---
-### Release v1.1.3
+### Release v1.1.4
 #### Change:
 - Calendar class implemented various extra functions (#3)
 ---
-### Release v1.1.4
+### Release v1.1.5
 #### Added:
 - Implemented Building class (#4)
 - Getting test ready (#5)
 - Implementing try-catchs (#6)
+---
+### Release v1.2.0
+#### Added:
+- Menu implemented (7#)
