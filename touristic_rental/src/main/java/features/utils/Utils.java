@@ -18,4 +18,25 @@ public class Utils {
         System.out.println("Invalid choice. Please try again.");
         printLine();
     }
+    public static boolean yearValidator(int year) {
+        if (year < 2024 || year > 2034) {
+            System.out.println("Invalid year. Please enter a year between 2024 and 2034.");
+            return false;
+        }
+        return true;
+    }
+    public static boolean monthValidator(int month) {
+        if (month < 1 || month > 12) {
+            System.out.println("Invalid month. Please enter a month between 1 and 12.");
+            return false;
+        }
+        return true;
+    }
+    public static boolean dayValidator(int day, int month, int year) {
+        if (!Date.checkExistentDay(day, month, year)) {
+            System.out.println("Invalid day. Please enter a valid day.");
+            return false;
+        }
+        return true;
+    }
 }

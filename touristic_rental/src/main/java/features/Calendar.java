@@ -20,7 +20,8 @@ public class Calendar {
     public void bookingDate(String date) {
         calendar.put(date, false);
     }
-
+    
+    // Possible dates between 2024 and 2034
     private void calendarMaker() {
         String date;
 

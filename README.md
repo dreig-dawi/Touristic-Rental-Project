@@ -28,4 +28,8 @@ The functionality of project it is explained below, this explanation is based on
 ---
 ### Release v1.2.0
 #### Added:
-- Menu implemented (7#)
+- Menu implemented (#7)
+---
+### Release v1.2.1
+#### Changed:
+- Menu completed (#8)
