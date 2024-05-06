@@ -1,7 +1,5 @@
 package com.example;
 
-import features.Apartment;
-import features.Building;
 import features.Menu;
 
 public class Main {
